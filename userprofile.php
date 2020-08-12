@@ -215,7 +215,7 @@ require_once("./php/sql.php");
                                     <tr><td style="color:#30304e;font-size:18px;font-weight:500">交友項目</td></tr>
                                     <tr><td><?=$prof[0]['item']?></td></tr>
                                 </table>
-                                <a href="booking.php?acc=<?=$prof[0]['acc']?>" class="site-btn list-btn">我要申請</a>
+                                <a href="<?=(isset($_SESSION['admin'])) ? "booking.php?acc=".$prof[0]['acc'] : "#login"?>" <?=(isset($_SESSION['admin'])) ? '' : ' data-toggle="modal"'?> class="site-btn list-btn">我要申請</a>
                             </div>
                         </div>
                     </div>
@@ -436,6 +436,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
